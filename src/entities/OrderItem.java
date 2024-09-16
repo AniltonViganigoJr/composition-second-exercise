@@ -36,11 +36,10 @@ public class OrderItem {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Oder Items:\n");
-		sb.append(product.getName() + ",");
-		sb.append(product.getPrice() + ",$");
+		sb.append(product.getName() + ",$");
+		sb.append(String.format("%.2f",product.getPrice()) + ",");
 		sb.append("Quantity: " + quantity);
-		sb.append(",Subtotal: $" + subTotal() + "\n");
+		sb.append(",Subtotal: $" + String.format("%.2f", subTotal()) + "\n");
 
 		return sb.toString();
 	}
